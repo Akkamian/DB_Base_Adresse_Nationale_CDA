@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  db_brief_ban:
+    image: postgres:18
+    restart: always
+    environment:
+      POSTGRES_USER: userban
+      POSTGRES_PASSWORD: root1234
+      POSTGRES_DB: brief_ban
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/18/docker
+      - ./initDb/script_init_db.sql:/docker-entrypoint-initdb.d/script_init_db.sql:ro
+
+volumes:
+  pgdata:

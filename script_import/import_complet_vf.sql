@@ -1,40 +1,9 @@
-/** Option de script avec création  de la table raw data **/
--- DROP TABLE IF EXISTS raw_data;
-
--- CREATE TEMP TABLE raw_data (
---     id VARCHAR(50),
---     id_fantoir VARCHAR(50),
---     nom_voie VARCHAR(100),
---     nom_afnor VARCHAR(50),
---     source_nom_voie VARCHAR(50),
---     nom_commune VARCHAR(50),
---     code_postal VARCHAR(5),
---     code_insee VARCHAR(5),
---     nom_ancienne_commune VARCHAR(50),
---     code_insee_ancienne_commune VARCHAR(5),
---     cad_parcelles TEXT,
---     numero INTEGER,
---     rep VARCHAR(20),
---     x FLOAT4,
---     y FLOAT4,
---     lon FLOAT4,
---     lat FLOAT4,
---     type_position VARCHAR(20),
---     source_position VARCHAR(20),
---     nom_ld VARCHAR(100),
---     libelle_acheminement VARCHAR(50),
---     certification_commune INTEGER,
---     alias VARCHAR(50)
--- );
-
-
 /** Option de script à partir d'une table raw data existante **/
 TRUNCATE TABLE raw_data;
 
 
-
 -- import les données brutes à partir d'un fichier csv en ouvrant une console avec psql
-\copy raw_data FROM 'C:/Users/clej2/Downloads/adresses-38.csv/adresses-38.csv' WITH (FORMAT csv, DELIMITER ';', HEADER, ENCODING 'WIN1252');
+\copy raw_data FROM 'C:/Users/monuser/chemin_du_fichier.csv' WITH (FORMAT csv, DELIMITER ';', HEADER, ENCODING 'WIN1252');
 
 --  ou importer via dbeaver : cela semble poser moins de pb d'encodage
 
