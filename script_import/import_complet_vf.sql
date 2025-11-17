@@ -1,11 +1,13 @@
 /** Option de script à partir d'une table raw data existante **/
 TRUNCATE TABLE raw_data;
 
+/*
+==========================================================================
 
--- import les données brutes à partir d'un fichier csv en ouvrant une console avec psql
-\copy raw_data FROM 'C:/Users/monuser/chemin_du_fichier.csv' WITH (FORMAT csv, DELIMITER ';', HEADER, ENCODING 'WIN1252');
+= IMPORTANT : Inserer des données brutes en ligne de commande ou via dbeaver dans la table raw_data
 
---  ou importer via dbeaver : cela semble poser moins de pb d'encodage
+==========================================================================
+*/
 
 
 --Script de transformation des données brutes vers le modèle normalisé
